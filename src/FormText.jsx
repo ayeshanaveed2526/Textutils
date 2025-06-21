@@ -20,6 +20,7 @@ export default function FormText({ heading }) {
       }
       const [text, setText] = useState( " Enter your text here ");
   return (
+    <>
     <div>
       
 
@@ -45,8 +46,20 @@ export default function FormText({ heading }) {
         onClick={(handleLoClick)}
       >
         Convert to Lowercase{" "}
+        
       </button>
       
+      
     </div>
+    <div className="container my-3">
+<h2>Your Text Summary</h2>
+<p>{text.split(" ").length} words and {text.length} characters</p>
+<p>{0.008*text.split(" ").length} Minutes Read</p>
+    </div>
+    <div className="container my-3">
+      <h2>Preview</h2>
+      <p>{text}</p>
+    </div>
+    </>
   );
 }
