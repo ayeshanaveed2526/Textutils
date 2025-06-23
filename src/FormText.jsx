@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 export default function FormText({ heading }) {
+  const [isItalic, setIsItalic] = useState(false);
+  const [text, setText] = useState( " Enter your text here ");
+  const [isBold, setIsBold] = useState(false);
   const handleUpClick = () => {
         // Convert text to uppercase
         let newText = text.toUpperCase();
@@ -18,7 +21,23 @@ export default function FormText({ heading }) {
         console.log(" handle on change was clicked")
         setText(event.target.value)
       }
-      const [text, setText] = useState( " Enter your text here ");
+      const handleClearClick=()=>{
+        console.log("Text is cleared")
+        setText('')
+    
+      }
+      const handleItalicClick =()=>{
+
+      setIsItalic(!isItalic);
+        console.log("text is converted to italic font")
+        // setText(newText);
+      }
+      const handleBoldClick =()=>{
+        // Convert text to bold
+        setIsBold(!isBold);
+        console.log("text is converted to bold font")
+        setText(newText);
+      }
   return (
     <>
     <div>
@@ -33,6 +52,10 @@ export default function FormText({ heading }) {
           value={text}
           rows="8"
           onChange={handleOnChange}
+           style={{
+             fontStyle: isItalic ? "italic" : "normal",
+             fontWeight: isBold ? "bold" : "normal"
+           }}
         ></textarea>
       </div>
       <button
@@ -48,6 +71,27 @@ export default function FormText({ heading }) {
         Convert to Lowercase{" "}
         
       </button>
+      <button
+        className="btn btn-primary mx-2"
+        onClick={(handleClearClick)}
+      >
+        Clear Text{" "}
+        
+      </button>
+      <button
+        className="btn btn-primary mx-2"
+        onClick={(handleItalicClick)}
+      >
+        Convert to italics{" "}
+        
+      </button>
+      <button
+        className="btn btn-primary mx-2"
+        onClick={(handleBoldClick)}
+      >
+        Bold Text{" "}
+        
+      </button>
       
       
     </div>
@@ -58,7 +102,9 @@ export default function FormText({ heading }) {
     </div>
     <div className="container my-3">
       <h2>Preview</h2>
-      <p>{text}</p>
+      {/* <p>{text}</p> */}
+      <p style={{ fontStyle: isItalic ? "italic" : "normal" }}>{text}</p>
+      <p style={{fontWeight: isBold ? "bold": "normal"}}>{text}</p>
     </div>
     </>
   );
