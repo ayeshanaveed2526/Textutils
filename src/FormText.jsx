@@ -124,7 +124,7 @@ export default function FormText({ heading,mode}) {
       <div className="container my-3" style={{ color: mode === 'dark' ? 'white' : 'black'}}>
         <h2>Preview</h2>
         {/* <p>{text}</p> */}
-        <p style={{ fontStyle: isItalic ? "italic" : "normal", fontWeight: isBold ? "bold" : "normal" , fontWeight: isBold ? "bold" : "normal" }}> {text.length>0?text:"Enter Text to preview"}</p>
+        <p style={{ fontStyle: isItalic ? "italic" : "normal", fontWeight: isBold ? "bold" : "normal" , fontWeight: isBold ? "bold" : "normal" }}> {text.length>0?text:"Enter Text to textbox to preview it"}</p>
        
         
       </div>
