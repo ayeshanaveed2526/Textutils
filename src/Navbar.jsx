@@ -1,9 +1,9 @@
 // import PropTypes from 'prop-types'
 
-function Navbar() {
+function Navbar(props) {
     return(
         <div>
-              <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+              <nav className={`navbar navbar-expand-lg navbar navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
     <a className="navbar-brand" href="/">TextUtils</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,10 @@ function Navbar() {
         
       </ul>
     </div>
+    <div className={`form-check form-switch text-${props.mode==='light'? 'dark': 'light'}`}>
+  <input className="form-check-input"  onClick={props.toggleBtn} type="checkbox" role="switch" id="switchCheckDefault"/>
+  <label className="form-check-label" htmlFor="switchCheckDefault">{props.mode}</label>
+</div>
   </div>
 </nav>
         </div>
