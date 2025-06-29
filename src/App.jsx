@@ -1,8 +1,8 @@
 
 import "./App.css";
 import Navbar from "./Navbar";
-import  FormText from "./FormText";
-// import About from "./About";
+// import  FormText from "./FormText";
+import About from "./About";
 import React,{ useState} from "react";
 
 
@@ -21,10 +21,10 @@ function App() {
   return (
     <>
       <Navbar mode={mode} toggleBtn={toggleBtn} />
-      <div className="container my-3">
+      {/* <div className="container my-3">
         <FormText heading="Enter the text to analyze below"  mode={mode} toggleBtn={toggleBtn}/>
-      </div>
-      {/* <About/> */}
+      </div> */}
+      <About mode={mode}/>
     </>
   );
 }
