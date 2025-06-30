@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <Navbar mode={mode} toggleBtn={toggleBtn} />
-      <Alert alert="Dark Mode Enable"/>
+      <Alert alert=" You Can Enable Dark Mode "/>
       <div className="container my-3">
         <FormText heading="Enter the text to analyze below"  mode={mode} toggleBtn={toggleBtn}/>
       </div>

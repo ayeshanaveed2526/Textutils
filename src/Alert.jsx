@@ -7,7 +7,7 @@ export default function Alert(props) {
         className="alert alert-warning alert-dismissible fade show"
         role="alert"
       >
-        <strong>Hey! {props.alert}</strong>
+        Hey! {props.alert}
         <button
           type="button"
           className="btn-close"
