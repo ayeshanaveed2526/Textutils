@@ -1,12 +1,14 @@
 
 import "./App.css";
 import Navbar from "./Navbar";
-// import  FormText from "./FormText";
-import About from "./About";
+import  FormText from "./FormText";
+// import About from "./About";
 import React,{ useState} from "react";
+import Alert from "./Alert";
 
 
 function App() {
+  
   const [mode, setMode] = useState('light'); // 'light' or 'dark'
   const toggleBtn = () => {
     if (mode === 'light') {
@@ -21,10 +23,11 @@ function App() {
   return (
     <>
       <Navbar mode={mode} toggleBtn={toggleBtn} />
-      {/* <div className="container my-3">
+      <Alert alert="Dark Mode Enable"/>
+      <div className="container my-3">
         <FormText heading="Enter the text to analyze below"  mode={mode} toggleBtn={toggleBtn}/>
-      </div> */}
-      <About mode={mode}/>
+      </div>
+      {/* <About mode={mode}/> */}
     </>
   );
 }
