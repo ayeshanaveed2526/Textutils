@@ -1,108 +1,97 @@
-import React, { use, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function About({mode})
- {
-  
-
+export default function About({ mode }) {
   return (
-    <div className="container my-3" style={{ color: mode === 'dark' ? 'white' : 'black'}}> <h2>About us</h2>
-    
+    <div className="container my-3" style={{ color: mode === 'dark' ? 'white' : 'black' }}>
+      <h2>About us</h2>
+      
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button
-              // className="accordion-button"style={{ color: mode === 'dark' ? 'white' : 'black'}}
-              className="accordion-button"style={{ background: mode === 'dark' ? 'black' : 'white', color: mode==='dark'? 'white':'black'}}
-              // className= {`accordion-button ${mode} === 'dark'? 'text-white':'text-dark'`}
+              className="accordion-button"
+              style={{ background: mode === 'dark' ? '#343a40' : 'white', color: mode === 'dark' ? 'white' : 'black' }}
               type="button"
-            
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              About TextUtils
             </button>
           </h2>
           <div
             id="collapseOne"
             className="accordion-collapse collapse show"
-          
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={{ color: mode === 'dark' ? 'white' : 'black', background:mode==='dark'?'black':'white'}}>
-              <strong>This is the first item’s accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It’s also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            <div className="accordion-body" style={{ color: mode === 'dark' ? 'white' : 'black', background: mode === 'dark' ? '#343a40' : 'white' }}>
+              <strong>TextUtils is a text manipulation tool.</strong> It provides various features to analyze and modify your text including converting to uppercase, lowercase, removing extra spaces, and more. You can also copy text to clipboard and see real-time preview of your changes.
+              <br />
+              <Link to="/" className="btn btn-primary mt-2">Go to Home</Link>
             </div>
           </div>
         </div>
+        
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button
-              className="accordion-button collapsed"style={{ background: mode === 'dark' ? 'black' : 'white', color: mode==='dark'? 'white':'black'}}
-            
+              className="accordion-button collapsed"
+              style={{ background: mode === 'dark' ? '#343a40' : 'white', color: mode === 'dark' ? 'white' : 'black' }}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              Features
             </button>
           </h2>
           <div
             id="collapseTwo"
-           
             className="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={{ background: mode === 'dark' ? 'black' : 'white', color: mode==='dark'? 'white':'black'}}>
-              <strong>This is the second item’s accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It’s also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            <div className="accordion-body" style={{ background: mode === 'dark' ? '#343a40' : 'white', color: mode === 'dark' ? 'white' : 'black' }}>
+              <strong>Our features include:</strong>
+              <ul>
+                <li>Convert text to uppercase</li>
+                <li>Convert text to lowercase</li>
+                <li>Remove extra spaces</li>
+                <li>Copy text to clipboard</li>
+                <li>Text formatting (bold, italic, underline)</li>
+                <li>Word and character count</li>
+                <li>Reading time estimation</li>
+              </ul>
+              <Link to="/" className="btn btn-success mt-2">Try Now</Link>
             </div>
           </div>
         </div>
+        
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button
-              className="accordion-button collapsed"style={{ background: mode === 'dark' ? 'black' : 'white', color: mode==='dark'? 'white':'black'}}
-            
+              className="accordion-button collapsed"
+              style={{ background: mode === 'dark' ? '#343a40' : 'white', color: mode === 'dark' ? 'white' : 'black' }}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              Dark Mode Support
             </button>
           </h2>
           <div
             id="collapseThree"
-            
             className="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={{ background: mode === 'dark' ? 'black' : 'white', color: mode==='dark'? 'white':'black'}}>
-              <strong>This is the third item’s accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It’s also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            <div className="accordion-body" style={{ background: mode === 'dark' ? '#343a40' : 'white', color: mode === 'dark' ? 'white' : 'black' }}>
+              <strong>We support both light and dark themes.</strong> You can toggle between light and dark mode using the switch in the navigation bar. The dark mode provides a comfortable viewing experience in low-light conditions.
+              <br />
+              <Link to="/" className="btn btn-info mt-2">Back to TextUtils</Link>
             </div>
           </div>
         </div>
